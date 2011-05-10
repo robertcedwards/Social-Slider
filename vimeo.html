@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Horizontal Sliding Social widget</title>
+<link rel="stylesheet" type="text/css" href="slidemenu.css" />
+</head>
+
+
+<body>
+<script type='text/javascript'> 
+		
+		// Change this to your username to load in your clips
+		var vimeoUserName = 'coactlab';
+		
+		// Tell Vimeo what function to call
+		var userInfoCallback = 'userInfo';
+		var clipsCallback = 'showThumbs';
+		
+		// Set up the URLs
+		var userInfoUrl = 'http://www.vimeo.com/api/' + vimeoUserName + '/user_info.json?callback=' + userInfoCallback;
+		var clipsUrl = 'http://www.vimeo.com/api/' + vimeoUserName + '/clips.json?callback=' + clipsCallback;
+		
+		// This function adds user info to the page
+		function userInfo(info) {
+			var stats = document.getElementById('stats');
+			
+			var img = document.createElement('img');
+			img.setAttribute('id', 'portrait');
+			img.setAttribute('src', info.thumbnail_small);
+			img.setAttribute('alt', info.display_name);
+			stats.appendChild(img);
+			
+
+			
+			
+			
+		}
+		
+		// This function goes through the clips and puts them on the page
+		function showThumbs(clips) {
+			var thumbs = document.getElementById('thumbs');
+			thumbs.innerHTML = '';
+			
+			var ul = document.createElement('ul');
+			thumbs.appendChild(ul);
+			
+			for (var i = 0; i < clips.length; i++) {
+				var thumb = document.createElement('img');
+				thumb.setAttribute('src', clips[i].thumbnail_medium);
+				thumb.setAttribute('alt', clips[i].title);
+				thumb.setAttribute('title', clips[i].title);
+				
+				var a = document.createElement('a');
+				a.setAttribute('href', clips[i].url);
+				a.setAttribute('target', clips[i], '_blank');
+				a.appendChild(thumb);
+				
+				var li = document.createElement('li');
+				li.appendChild(a);
+				ul.appendChild(li);
+			}
+		}
+		
+		// This function loads the data from Vimeo
+		function init() {
+			var head = document.getElementsByTagName('head').item(0);
+			
+			var userJs = document.createElement('script');
+			userJs.setAttribute('type', 'text/javascript');
+			userJs.setAttribute('src', userInfoUrl);
+			head.appendChild(userJs);
+			
+			var clipsJs = document.createElement('script');
+			clipsJs.setAttribute('type', 'text/javascript');
+			clipsJs.setAttribute('src', clipsUrl);
+			head.appendChild(clipsJs);
+		}
+		
+		// Call our init function when the page loads
+		window.onload = init;
+		
+	</script> 
+<div id="stats"></div>
+  <div id="thumbs">Loading videos...</div>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>

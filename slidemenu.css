@@ -1,17 +1,81 @@
 * {margin:0; padding:0}
 #wrap{position:relative;margin: 0 auto 0 auto;width: 60%;background-color: #E8E8E8;}
 .sm {list-style:none; width:459px; height:100px; display:block; overflow:hidden}
-.sm li {float:left; display:inline; overflow:hidden}
-<!-- 
-/* You can modify these CSS styles */
-.vimeoBadge { position:absolute; right:0px; top:0px;margin: 0; padding: 0; font: normal 11px verdana,sans-serif; }
-.vimeoBadge img { border: 0; }
-.vimeoBadge a, .vimeoBadge a:link, .vimeoBadge a:visited, .vimeoBadge a:active { color: #3A75C4; text-decoration: none; cursor: pointer; }
-.vimeoBadge a:hover { color:#00CCFF; }
-.vimeoBadge #vimeo_badge_logo { margin-top:10px; width: 57px; height: 16px; }
-.vimeoBadge .credit { font: normal 11px verdana,sans-serif; }
-.vimeoBadge .clip { padding:0; float:left; margin:0 10px 10px 0; width:80px; line-height:0; }
-.vimeoBadge .caption { font: normal 11px verdana,sans-serif; overflow:hidden; width:80px; height: 30px; }
-.vimeoBadge .clear { display: block; clear: both; visibility: hidden; } 
+.sm li.slide {float:left; display:inline; overflow:hidden}
 
--->
+.vimeoBadge { position:absolute; right:0px; top:0px;margin: 0; padding: 0; font: normal 11px verdana,sans-serif; }
+#stats{
+float:left;
+width:80px;
+}
+
+#thumbs {
+
+}
+#thumbs ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#thumbs li {
+	display: inline;
+	padding: 0;
+	margin: 10px 2px;
+}
+#thumbs img {
+	border:0;
+	width:94px;
+}
+img#portrait {
+	float: left;
+	margin-right: 5px;
+}
+
+#videos {
+	background-color:#46b7ff;
+	color:#fff;
+	float:right;
+	padding:8px;
+	font-size:18px;
+	margin-bottom:4px;
+	margin-left:2px;
+}
+#likes {
+	background-color:#fd4122;
+	color:#fff;
+	float:left;
+	padding:8px;
+	font-size:18px;
+	margin-bottom:4px;
+}
+#bio {
+	padding-bottom:10px;
+}
+#contacts {
+	background-color:#999;
+	color:#fff;
+	float:left;
+	padding:8px;
+	font-size:18px;
+	margin-bottom:4px;
+}
+#vimloader img {
+	width:16px;
+	height:16px;
+}
+ 
+.clear{
+clear:both;}
+#twitterbadge {
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size: 11px;
+	color: #3B5998;
+	}
+#twitterbadge a {
+	color: #3B5998;
+	text-decoration: none;
+}
+#twitterbadge a:hover {
+	color: #3B5998;
+	text-decoration: underline;
+}
